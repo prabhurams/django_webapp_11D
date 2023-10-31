@@ -10,8 +10,35 @@ from meetings.models import Meetings
 #    return render(request, "website/welcome.html", { "message1": " Does this data really come from view inside"})
  
 
+#def welcome(request):
+#    return render(request, "website/welcome.html",{"num_meetings": Meetings.objects.count()})
+
+#def welcome(request):
+#    return render (request, "website/welcome.html",{"meetings": Meetings.objects.all()})
+
+
+#def welcome(request):
+ #   return render (request, "website/welcome.html",{"count_meeting": Meetings.objects.count()})
+
+
+#def welcome(request):
+ #   return render (request, "website/welcome.html",{"checks": Meetings.objects.all()})
+
+
 def welcome(request):
-    return render(request, "website/welcome.html",{"num_meetings": Meetings.objects.count() })
+    return render (request, "website/welcome.html",{"meetings":Meetings.objects.all()})
+
+#getting the meeting name
+#def welcome(request):
+ #   return render(request,"website/welcome.html",{"meeting_title":Meetings.objects.name()})
+
+#def welcome(request):
+ #   return render (request, "website/welcome.html",{"count_meetings":Meetings.objects.count()})
+
+#def welcome(request):
+ #   return render (request, "website/welcome.html",{"meetings":Meetings.objects.all()})
+
+
 
 def welcome2(request):
     return HttpResponse("Welcome to the Meeting Planner 3 in VS!")

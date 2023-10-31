@@ -2,27 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome New!</title>
 </head>
 <body>
-    <h1> Welcome to Meeting Planner </h1>
+    <h1>Welcome to the Meeting Planner!</h1>
     <p>
-        This is a demo application for the course 
-        <em> Django Getting Started </em>
-        on <a href="htttp://wwww.google.com">Google</a>
+        This is the demo application for the course
+        <em>Django: Getting Started</em>
+        on <a href="https://www.pluralsight.com">
+        Pluralsight</a>.
     </p>
 
-    <p>
-        {{message1}}
-    </p>
+</p>
+{{meeting_title}}
+</p>
 
-    <p>
-        {{num_meetings}}
-    </p>
-
-    <p>
-        {{message1}}
-    </p>
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="{% url 'detail' meeting.id %}">
+                     {{meeting.room}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 
 </body>
 </html>
+
+<!---
+<ul>
+    {% for meeting in meetings %}
+        <li>
+            <a href="/meetings/{{meeting.id }}">
+                 {{meeting.room}}
+            </a>
+        </li>
+    {% endfor %}
+</ul> -->
